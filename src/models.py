@@ -48,7 +48,12 @@ class Favorite_type(Base):
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    name = Column(String(10), nullable=False)
+    planet_id = Column(Integer, ForeignKey('planets.id'))
+    planet = relationship(Planets)
+    character_id = Column (Integer, ForeignKey('characters,id')
+    character = relationship(Characters)
+    
+
 
     def to_dict(self):
         return {}
